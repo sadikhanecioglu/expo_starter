@@ -3,7 +3,9 @@ import { StyleSheet, ImageBackground, TouchableOpacity,View, Text } from 'react-
 
 export default function GreenButton(props) {
   return (
-    <TouchableOpacity style={[styles.buttonContenier, {...props.style}]} activeOpacity={0}>
+    <TouchableOpacity style={[styles.buttonContenier, {...props.style}]} activeOpacity={0}
+    onPress={props.onPress}
+    >
       <ImageBackground
         source={props.icon}
         style={styles.ImageIconStyle}
