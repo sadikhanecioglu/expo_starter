@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from "react";
 import * as Battery from "expo-battery";
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
-import GreenButton from "../../components/GreenButton";
+import { Image, StyleSheet, Text, View, ImageBackground} from "react-native";
+import LeftSlipButton from "../../components/LeftSlipButton";
+import RightSlipButton from "../../components/RightSlipButton";
+import Announcement from "../../components/Announcement";
+import BalanceLayout from "../../components/BalanceLayout";
 import * as Progress from 'react-native-progress';
 
-
-const MarketIcon = require("../../assets/theme/cg/Market.png");
-const OyunIcon = require("../../assets/theme/cg/Oyun.png");
-const VideoIcon = require("../../assets/theme/cg/Video.png");
+const GameIcon = require("../../assets/theme/cg/GameButton.png");
+const VideoIcon = require("../../assets/theme/cg/VideoButton.png");
+const AnnounceBack = require("../../assets/theme/cg/AnnounceBack.png");
+const AnnounceFwd = require("../../assets/theme/cg/AnnounceFwd.png");
 
 export default function HomeScreen({ navigation }) {
   const [batteryLevel, setBatteryLevel] = useState(null);
   const [batteryState, setBatteryState] = useState(null);
 
   useEffect(() => {
-   
+
     async function getInformation(){
         const state = await Battery.getBatteryStateAsync();
         setBatteryState(state);
@@ -52,44 +55,44 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <ImageBackground
-        style={styles.imageCapsul}
-        source={require("../../assets/theme/cg/Kapssul.png")}
-      >
-    {
-        batteryState != null && batteryState == 2 && 
-       <View style={styles.progressContanier}>
-       <Progress.Circle size={100} color="#006666" height={200} borderRadius={5} progress={batteryLevel} indeterminate={false} >
-           <Text style={styles.progressText}>%{ Math.round(batteryLevel*100)}</Text>
-       </Progress.Circle>
-       </View>
-    }
-        
-
-
-      </ImageBackground>
-
-      <View style={styles.buttonView}>
-
-        <GreenButton
-          text="market"
-          descText="Ürün al OXY kazan!"
-          icon={MarketIcon}
-          style={{ top: -60 }}
-        />
-        <GreenButton
-          text="oyun"
-          descText="Oyun oyna OXY kazan!"
-          icon={OyunIcon}
-          style={{ top: -25 }}
-        />
-        <GreenButton
-          text="video"
-          descText="Video izle OXY kazan!"
-          icon={VideoIcon}
-          style={{ top: -60 }}
+      <View style={styles.headerContainer}>
+        <Image style= {styles.logo} source={require("../../assets/theme/cg/LogoCG.png")}></Image>
+        <BalanceLayout
+          style={{}}
         />
       </View>
+      <View style={styles.bodyContainer}>
+        <LeftSlipButton
+          slipText="İzle Kazan"
+          icon={VideoIcon}
+          style={{}}
+          bgColor="#84d651"
+        />
+        <ImageBackground style={styles.capsule} source={require("../../assets/theme/cg/Capsule.png")}>
+          {
+            batteryState != null && batteryState == 2 && 
+            <View style={styles.progressContainer}>
+              <Progress.Circle size={100} color="#0b5c50" height={200} borderRadius={5} progress={batteryLevel} indeterminate={false} >                    
+                <Text style={styles.progressText}>{ Math.round(batteryLevel*100)}%</Text>
+              </Progress.Circle>
+            </View>
+          }
+        </ImageBackground> 
+        <RightSlipButton
+          slipText="Oyna Kazan"
+          icon={GameIcon}
+          style={{}}
+          bgColor="#0b5c50"
+        />
+      </View>
+      <View style={styles.footerContainer}>
+        <Announcement
+          announceText="Arkadaşlarını Davet Et OXY Kazan!"
+          backIcon={AnnounceBack}
+          fwdIcon={AnnounceFwd}
+          style={{}}
+        />
+      </View>    
     </View>
   );
 }
@@ -97,45 +100,51 @@ export default function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    justifyContent: "center",
     alignItems: "center",
-    justifyContent: "space-around",
-    backgroundColor: "#fff",
+
   },
-  headerContanier: {
+  headerContainer: {
+    justifyContent: "space-evenly",
+    alignItems:"center",
+    flexDirection: "row",
+    width: "100%",
+    height: "18%",
+    paddingTop: "10%",
+  },
+  logo: {
+    width: "35%",
+    resizeMode: "contain",
+  },
+  bodyContainer: {
+    flexDirection: "row",
+    width: "100%",
+    height: "70%",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  capsule: {
+    width: 212,
+    height: "100%",
+    resizeMode: "contain",
+  },
+  progressContainer:{
     flex: 1,
-    backgroundColor: "orange",
-    padding: 18,
+    justifyContent:"center",
+    alignItems: "center",
   },
-  headerText: {
-    marginTop: 10,
-    color: "#000",
-    textAlign: "center",
+  progressText:{
+    position:"absolute",
+    top:35,
+    left:27,
+    color: "#0b5c50",
     fontWeight: "bold",
     fontSize: 20,
   },
-  imageCapsul: {
-    width: 162,
-    height: 450,
-    justifyContent: "space-around", //  <-- you can use "center", "flex-start",
-    resizeMode: "contain",
-    marginTop: 50,
-  },
-  buttonView: {
-    flexDirection: "row",
+  footerContainer: {
+    width: "100%",
+    height: "12%",
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: 45,
-  },
-  progressContanier:{
-      flex:1,
-      justifyContent:"center",
-      alignItems: "center",
-      marginBottom:20
-  },
-  progressText:{
-     position:"absolute",
-     top:40,
-     left:35
   }
 });

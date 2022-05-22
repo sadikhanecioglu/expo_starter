@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, ImageBackground, TouchableOpacity,View, Text } from 'react-native';
 
-export default function GreenButton(props) {
+export default function itemButton(props) {
   return (
     <TouchableOpacity style={[styles.buttonContainer, {...props.style}]} activeOpacity={0}
     onPress={props.onPress}
@@ -13,51 +13,54 @@ export default function GreenButton(props) {
         <View>
           <Text Text style={styles.ImageTextStyle}>
               {props.text}
-          </Text>
+            </Text>
         </View>
       </ImageBackground>
-      <Text style={styles.descText}>{props.descText}</Text>
+      <View style={styles.TextContainer}>  
+        <Text style={styles.descText}>{props.descText}</Text>
+      </View>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    flex: 1,
-
-
     alignItems: 'center',
-    justifyContent: 'center',
-    height:80,
+    justifyContent: 'flex-start',
+    height: 200,
+    width: 170,
+    backgroundColor: "white",
+    borderRadius: 10,
+    marginBottom: 20,
   },
   ImageIconStyle: {
-
-    position: 'absolute',
-    left:0,
-    right:0,
-    top:0,
-    bottom:0,
     justifyContent: 'center', 
     alignItems: 'center',
-    width:80,
-    height:80
+    width: 140,
+    height: 140,
+    margin: 10,
   },
   TextContainer:{
-
+    backgroundColor:"white",
+    width: 170,
+    height: 50,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    borderStyle: "solid",
+    borderTopWidth: 1,
+    borderTopColor: "lightgrey",
+    justifyContent: "center",
+    alignItems: "center",
   },
   ImageTextStyle: {
-    color: '#fff',
-    marginTop:20,
+
   },
   descText:{
-    position:'absolute',
-    bottom:-40,
-    left:0,
-    flex:1,
-    color: '#99cc66',
-    justifyContent: 'flex-end', alignItems: 'flex-end',
+    color: "black",
+    fontSize: 13,
+    justifyContent: 'flex-end', 
+    alignItems: 'flex-end',
     textAlign: 'center',
     flexWrap: 'wrap',
-    width:80
-  }
+  },
 });
