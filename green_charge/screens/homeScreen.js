@@ -102,10 +102,9 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     alignItems: "center",
-
   },
   headerContainer: {
-    justifyContent: "space-evenly",
+    justifyContent: "space-around",
     alignItems:"center",
     flexDirection: "row",
     width: "100%",
@@ -113,7 +112,7 @@ const styles = StyleSheet.create({
     paddingTop: "10%",
   },
   logo: {
-    width: "35%",
+    width: "37%",
     resizeMode: "contain",
   },
   bodyContainer: {

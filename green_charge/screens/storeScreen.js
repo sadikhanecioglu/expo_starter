@@ -1,29 +1,31 @@
-
 import React from 'react';
-import { StyleSheet, Text,  View, Button, ScrollView } from 'react-native';
+import { StyleSheet, Text,  View, Button, ScrollView, Image } from 'react-native';
 import ItemButton from "../../components/itemButton";
 const ItemPullover = require("../../assets/theme/cg/tshirt.png");
+import BalanceLayout from "../../components/BalanceLayout";
 export default function StoreScreen({navigation}){
     
     return (
     <View style={styles.storeContanier}>
         <View style={styles.headerContainer}>
-            <Text style={styles.dateText}>Morning, Sept 30</Text>
-            <Text style={styles.headerText}>Hello Samuel,...</Text>
+            <Image style= {styles.logo} source={require("../../assets/theme/cg/LogoCG.png")}></Image>
+            <BalanceLayout
+            style={{}}
+            />
         </View>
         <View style={styles.promoContainer}>
             <Text style={styles.promoText}>Get Promo 40% OFF For Today</Text>
         </View>    
         <View style={styles.categoriesContainer}>
-            <Text style={[styles.categoryText, styles.categoryFocus]}>Top</Text>
+            <Text style={[styles.categoryText, styles.categoryFocus]}>All</Text>
             <Text style={styles.categoryText}>Outdoor</Text>
             <Text style={styles.categoryText}>Indoor</Text>
-            <Text style={styles.categoryText}>Flowers</Text>
+            <Text style={styles.categoryText}>NFT</Text>
         </View>  
         <ScrollView contentContainerStyle={styles.itemContainer}>
             <ItemButton
-                text=""
-                descText="Baskılı Tişört"
+                descText="T-Shirt"
+                descPrice="20"
                 icon={ItemPullover}
                 style={{}}
                 onPress = {() => {
@@ -31,8 +33,8 @@ export default function StoreScreen({navigation}){
                 }}
                 />
             <ItemButton
-                text=""
-                descText="Baskılı Tişört"
+                descText="T-Shirt"
+                descPrice="20"
                 icon={ItemPullover}
                 style={{}}
                 onPress = {() => {
@@ -40,8 +42,8 @@ export default function StoreScreen({navigation}){
                 }}
                 />
             <ItemButton
-                text=""
-                descText="Baskılı Tişört"
+                descText="T-Shirt"
+                descPrice="20"
                 icon={ItemPullover}
                 style={{}}
                 onPress = {() => {
@@ -49,8 +51,8 @@ export default function StoreScreen({navigation}){
                 }}
                 />
             <ItemButton
-                text=""
-                descText="Baskılı Tişört"
+                descText="T-Shirt"
+                descPrice="20"
                 icon={ItemPullover}
                 style={{}}
                 onPress = {() => {
@@ -67,41 +69,40 @@ const styles = StyleSheet.create({
     storeContanier:{
         flex: 1,
         backgroundColor:'whitesmoke',
-        paddingTop: 70,
-        paddingHorizontal: 20,
+        paddingTop: "12.75%",
+        paddingHorizontal: "5%",
     },
-    headerContainer:{
-        height: 80,
-        marginBottom: 10,
+    headerContainer: {
+        justifyContent: "space-between",
+        alignItems:"center",
+        flexDirection: "row",
+        width: "100%",
+        height: "10%",
+        paddingRight: "8.25%",
+        marginBottom: "6%",
     },
-    dateText:{
-        color:'grey',
-        fontSize: 14,
-    },
-    headerText:{
-        marginTop: 10,
-        color:'black',
-        fontWeight:'bold',
-        fontSize: 24,   
+    logo: {
+        width: "45%",
+        resizeMode: "contain",
     },
     promoContainer:{
-        backgroundColor:"lightgreen",
-        height: 130,
-        marginBottom: 30,
+        backgroundColor:"#31a05f",
+        height: "20%",
+        marginBottom: "8%",
         borderRadius: 15,
     },
     promoText:{
-        width: 100,
+        width: "30%",
         fontSize: 20,
         color: "white",
         fontWeight: "bold",
-        margin: 25,
+        margin: "7%",
     },
     categoriesContainer:{
         flexDirection: "row",
         justifyContent: "space-around",
-        height: 20,
-        marginBottom: 20,
+        height: "4%",
+        marginBottom: "5%",
     },
     categoryText:{
         color: "grey",
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
     },
     categoryFocus:{
-        color: "orangered",
+        color: "#065649",
         fontWeight: "bold",
     }
 });

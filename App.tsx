@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Provider } from 'react-redux'
-import { StyleSheet, Dimensions, Image, Text, View, ImageBackground } from 'react-native';
+import { StyleSheet, Dimensions, Image, Text, View, ImageBackground, ActivityIndicator } from 'react-native';
 import ProductNavigation from './navigators/productNavigation';
 import {configureStore} from './states/store'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -11,14 +11,39 @@ import ProfileScreen from './green_charge/screens/profileScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
-import ProductAppSearch from './green_charge/screens/productScreen';
-
+import ProductScreen from './green_charge/screens/productScreen';
+import PaymentScreen from './green_charge/screens/paymentScreen';
+import * as Font from 'expo-font';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
+let customFonts = {
+  'Inter-Black': require('./assets/fonts/Poppins-Regular.ttf'),
+  'Inter-SemiBoldItalic': 'https://rsms.me/inter/font-files/Inter-SemiBoldItalic.otf?v=3.12',
+};
 
 function Home() {
+
+  const [fontsLoaded, setfontsLoaded] = useState(false);
+  
+  useEffect(() => {
+    const loadFonts = async () => {
+    await Font.loadAsync(customFonts);
+    setTimeout(() => {setfontsLoaded(true);},3000)
+    };
+    loadFonts();
+  }
+  );
+
+  if (fontsLoaded) {
+/*
+  return (
+    <View >
+      <Text style={{ fontSize: 18, marginTop: 300 }} >Welcome to your Expo app</Text>
+    </View>
+  );
+*/
   return (
     <Tab.Navigator 
       screenOptions={{headerShown: false, tabBarShowLabel: false,
@@ -88,6 +113,13 @@ function Home() {
       />
     </Tab.Navigator>
   );
+      } else {
+        return (
+          <View style={{backgroundColor: "#f2f2f2", width: "100%", height: "100%", justifyContent:"center", alignItems:"center"}}>
+            <ActivityIndicator size="large" color="#065649" />
+          </View>
+        );
+      }
 }
 
 
@@ -106,7 +138,8 @@ export default function App() {
       >
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="Store" component={StoreScreen} />
-        <Drawer.Screen name='Product' component={ProductAppSearch} />
+        <Drawer.Screen name='Product' component={ProductScreen} />
+        <Drawer.Screen name='Payment' component={PaymentScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
     </Provider>

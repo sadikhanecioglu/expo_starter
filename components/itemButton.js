@@ -11,13 +11,14 @@ export default function itemButton(props) {
         style={styles.ImageIconStyle}
       >
         <View>
-          <Text Text style={styles.ImageTextStyle}>
-              {props.text}
-            </Text>
+          <Text style={styles.ImageTextStyle}>
+            {props.text}
+          </Text>
         </View>
       </ImageBackground>
       <View style={styles.TextContainer}>  
         <Text style={styles.descText}>{props.descText}</Text>
+        <Text style={styles.descPrice}>₺{props.descPrice}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -48,9 +49,11 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 10,
     borderStyle: "solid",
     borderTopWidth: 1,
-    borderTopColor: "lightgrey",
-    justifyContent: "center",
+    borderTopColor: "#f2f2f2",
+    justifyContent: "space-between",
+    paddingHorizontal: "10%",
     alignItems: "center",
+    flexDirection: "row",
   },
   ImageTextStyle: {
 
@@ -58,9 +61,12 @@ const styles = StyleSheet.create({
   descText:{
     color: "black",
     fontSize: 13,
-    justifyContent: 'flex-end', 
-    alignItems: 'flex-end',
-    textAlign: 'center',
-    flexWrap: 'wrap',
+    letterSpacing: .8,
+  },
+  descPrice:{
+    color: "#065649",
+    fontSize: 15,
+    letterSpacing: .6,
+    fontWeight: "bold",
   },
 });

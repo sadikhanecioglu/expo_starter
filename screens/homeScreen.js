@@ -56,17 +56,14 @@ export default function HomeScreen({ navigation }) {
         style={styles.imageCapsul}
         source={require("../assets/theme/cg/Kapssul.png")}
       >
-    {
-        batteryState != null && batteryState == 2 && 
-       <View style={styles.progressContanier}>
-       <Progress.Circle size={100} color="#006666" height={200} borderRadius={5} progress={batteryLevel} indeterminate={false} >
-           <Text style={styles.progressText}>%{ Math.round(batteryLevel*100)}</Text>
-       </Progress.Circle>
-       </View>
-    }
-        
-
-
+      {
+          batteryState != null && batteryState == 2 && 
+        <View style={styles.progressContanier}>
+        <Progress.Circle size={100} color="#006666" height={200} borderRadius={5} progress={batteryLevel} indeterminate={false} >
+            <Text style={styles.progressText}>%{ Math.round(batteryLevel*100)}</Text>
+        </Progress.Circle>
+        </View>
+      }
       </ImageBackground>
 
       <View style={styles.buttonView}>
@@ -117,7 +114,7 @@ const styles = StyleSheet.create({
   imageCapsul: {
     width: 162,
     height: 450,
-    justifyContent: "space-around", //  <-- you can use "center", "flex-start",
+    justifyContent: "space-around",
     resizeMode: "contain",
     marginTop: 50,
   },
