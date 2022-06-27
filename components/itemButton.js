@@ -8,14 +8,8 @@ export default function itemButton(props) {
     >
       <ImageBackground
         source={props.icon}
-        style={styles.ImageIconStyle}
-      >
-        <View>
-          <Text style={styles.ImageTextStyle}>
-            {props.text}
-          </Text>
-        </View>
-      </ImageBackground>
+        style={styles.ImageIcon}
+      />
       <View style={styles.TextContainer}>  
         <Text style={styles.descText}>{props.descText}</Text>
         <Text style={styles.descPrice}>₺{props.descPrice}</Text>
@@ -34,7 +28,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 20,
   },
-  ImageIconStyle: {
+  ImageIcon: {
     justifyContent: 'center', 
     alignItems: 'center',
     width: 140,

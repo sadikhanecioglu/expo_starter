@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert } from "react-native";
 import { CreditCardInput } from "react-native-credit-card-input";
 
 export default function PaymentScreen({navigation}) {
@@ -7,7 +7,7 @@ export default function PaymentScreen({navigation}) {
     <View style={styles.container}>  
       <View style={styles.headerContainer}>
         <TouchableOpacity style={styles.backButton} activeOpacity={.75} onPress={() => {navigation.navigate('Product')}}>
-          <Image resizeMode="contain" source={require("../../assets/theme/cg/backButton.png")}></Image>
+          <Image style={{tintColor: "#065649"}} resizeMode="contain" source={require("../../assets/theme/cg/backButton.png")}></Image>
         </TouchableOpacity>
         <View style={styles.title}>
           <Text style={styles.titleText}>Ödeme Bilgileri</Text>
@@ -24,23 +24,31 @@ export default function PaymentScreen({navigation}) {
           validColor={"black"}
           invalidColor={"red"}
           placeholderColor={"darkgray"}
+          labels={{number: "KART NUMARASI", expiry: "TARİH", cvc: "CVC", name: "AD SOYAD"}}
+          placeholders={{number: "0000 0000 0000 0000", expiry: "AA/YY", cvc: "CVC", name: "AD SOYAD"}}
           />
       </View>
+      <View style={{width: "25%", alignSelf: "flex-end", marginRight: "12%", marginTop: "5%"}}>
+        <Button
+          title="ÖDEME"
+          color="#065649"
+          onPress={() => Alert.alert('Ödemeniz başarıyla gerçekleşti.')}
+        />
+      </View>  
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#065649",
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "#f2f2f2",
     height: "100%",
     width: "100%",
   },
   headerContainer: {
     width: "100%",
-    height: "10%",
+    height: "7%",
+    marginTop: "15%",
   },
   title:{
     width: "100%",
@@ -49,7 +57,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   titleText:{
-    color: "#ffffff",
+    color: "#065649",
     fontSize: 20,
     fontWeight: "normal",
     letterSpacing: 1,
@@ -61,15 +69,16 @@ const styles = StyleSheet.create({
     marginLeft: "6%",
   },
   paymentContainer: {
-    height: "70%",
+    height: "35%",
     width: "100%",
+    justifyContent: "center",
   },
   label: {
-    color: "white",
+    color: "#065649",
     fontSize: 12,
   },
   input: {
     fontSize: 16,
-    color: "white",
+    color: "#065649",
   },
 });
