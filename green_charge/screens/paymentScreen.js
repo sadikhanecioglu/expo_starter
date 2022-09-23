@@ -1,12 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert, useWindowDimensions } from "react-native";
 import { CreditCardInput } from "react-native-credit-card-input";
 
 export default function PaymentScreen({navigation}) {
+  const windowHeight = useWindowDimensions().height;
   return (
-    <View style={styles.container}>  
+    <View style={[styles.container, {minHeight: Math.round(windowHeight),}]}>  
       <View style={styles.headerContainer}>
-        <TouchableOpacity style={styles.backButton} activeOpacity={.75} onPress={() => {navigation.navigate('Product')}}>
+        <TouchableOpacity style={styles.backButton} activeOpacity={.75} onPress={() => {navigation.goBack()}}>
           <Image style={{tintColor: "#065649"}} resizeMode="contain" source={require("../../assets/theme/cg/backButton.png")}></Image>
         </TouchableOpacity>
         <View style={styles.title}>

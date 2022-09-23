@@ -18,7 +18,7 @@ export default function LeftSlipButton(props) {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    alignItems: "flex-end",
+    alignItems: "flex-start",
     justifyContent: "center",
     width: "20%",
     height: "100%",
@@ -50,5 +50,6 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: "#aaaaab",
     width: "80%",
+    alignSelf: "flex-end",
   }
 });

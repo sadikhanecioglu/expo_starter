@@ -15,7 +15,7 @@ const AnnounceFwd = require("../../assets/theme/cg/AnnounceFwd.png");
 export default function HomeScreen({ navigation }) {
   const [batteryLevel, setBatteryLevel] = useState(null);
   const [batteryState, setBatteryState] = useState(null);
-
+  
   useEffect(() => {
 
     async function getInformation(){
@@ -51,7 +51,7 @@ export default function HomeScreen({ navigation }) {
 
   }, []);
 
-
+  console.log(Math.round(batteryLevel*100));
 
   return (
     <View style={styles.container}>
@@ -70,14 +70,14 @@ export default function HomeScreen({ navigation }) {
         />
         <ImageBackground style={styles.capsule} source={require("../../assets/theme/cg/Capsule.png")}>
           {
-            batteryState != null && batteryState == 2 && 
+            batteryState != null && batteryState == 1 && 
             <View style={styles.progressContainer}>
-              <Progress.Circle size={100} color="#0b5c50" height={200} borderRadius={5} progress={batteryLevel} indeterminate={false} >                    
+              <Progress.Circle size={100} color="#53a2a3" height={"30%"} borderRadius={5} progress={batteryLevel} indeterminate={false} >                    
                 <Text style={styles.progressText}>{ Math.round(batteryLevel*100)}%</Text>
               </Progress.Circle>
             </View>
           }
-        </ImageBackground> 
+        </ImageBackground>
         <RightSlipButton
           slipText="Oyna Kazan"
           icon={GameIcon}
@@ -87,12 +87,11 @@ export default function HomeScreen({ navigation }) {
       </View>
       <View style={styles.footerContainer}>
         <Announcement
-          announceText="Arkadaşlarını Davet Et OXY Kazan!"
           backIcon={AnnounceBack}
           fwdIcon={AnnounceFwd}
           style={{}}
         />
-      </View>    
+      </View>
     </View>
   );
 }
@@ -109,7 +108,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     height: "18%",
-    paddingTop: "10%",
   },
   logo: {
     width: "37%",
@@ -129,16 +127,17 @@ const styles = StyleSheet.create({
   },
   progressContainer:{
     flex: 1,
-    justifyContent:"center",
+    justifyContent:"flex-start",
     alignItems: "center",
+    marginTop: "20%",
   },
   progressText:{
-    position:"absolute",
-    top:35,
-    left:27,
-    color: "#0b5c50",
+    color: "#effafb",
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 25,
+    alignSelf: "center",
+    position: "absolute",
+    top: "24%",
   },
   footerContainer: {
     width: "100%",

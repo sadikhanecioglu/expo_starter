@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from "react";
 import { StyleSheet, Image, ImageBackground, TouchableOpacity,View, Text } from 'react-native';
 
 export default function Announcement(props) {
+  
+  const announceFirst = "Arkadaşlarını Davet Et OXY Kazan!";
+  const announceSecond = 'Mağazayı ziyaret etmeyi unutma!';
+  const [announceText, setAnnounceText] = useState(true);
+
+  let changeAnnounce = () => setAnnounceText(previousState => !previousState);
+  let announcementText = announceText ? announceFirst : announceSecond
+  
   return (
     <View style={[styles.announceContainer, {...props.style}]}>
-      <TouchableOpacity  activeOpacity={0} onPress={props.onPress}>  
+      <TouchableOpacity  activeOpacity={0} onPress={changeAnnounce}>  
         <Image source={props.backIcon} style={styles.backIcon}></Image>
       </TouchableOpacity>
       <TouchableOpacity  activeOpacity={0} onPress={props.onPress}>
-        <Text style={styles.announceText}>{props.announceText}</Text>
+        <Text style={styles.announceText}>{announcementText}</Text>
       </TouchableOpacity>
-      <TouchableOpacity  activeOpacity={0} onPress={props.onPress}>  
+      <TouchableOpacity  activeOpacity={0} onPress={changeAnnounce}>  
         <Image source={props.fwdIcon} style={styles.fwdIcon}></Image>
       </TouchableOpacity>
     </View>

@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
 export default function ProfileScreen({navigation}) {
   return (
     <View style={styles.container}>
-        <Text>Profile</Text>
+        
     </View>
 )}
 

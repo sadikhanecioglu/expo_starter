@@ -131,16 +131,15 @@ export default function App() {
   return (
     <Provider store={configureStore}>
     <NavigationContainer>
-      <Drawer.Navigator
-        useLegacyImplementation
+      <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{ headerShown: false }}
       >
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Store" component={StoreScreen} />
-        <Drawer.Screen name='Product' component={ProductScreen} />
-        <Drawer.Screen name='Payment' component={PaymentScreen} />
-      </Drawer.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Store" component={StoreScreen} />
+        <Stack.Screen name='Product' component={ProductScreen} />
+        <Stack.Screen name='Payment' component={PaymentScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
     </Provider>
   );

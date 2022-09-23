@@ -5,7 +5,7 @@ export default function ProductScreen({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.firstContainer}>  
-        <TouchableOpacity style={styles.backButton} activeOpacity={.75} onPress={() => {navigation.navigate('Store')}}>
+        <TouchableOpacity style={styles.backButton} activeOpacity={.75} onPress={() => {navigation.goBack()}}>
           <Image resizeMode="contain" source={require("../../assets/theme/cg/backButton.png")}></Image>
         </TouchableOpacity>
         <View style={styles.title}>
@@ -28,7 +28,7 @@ export default function ProductScreen({navigation}) {
           </View>
           <TouchableOpacity style={styles.purchaseButton} activeOpacity={.75} onPress={() => {navigation.navigate('Payment')}}>
             <Text style={styles.purchaseText}>Satın Al</Text>
-            <Text style={styles.purchasePrice}>₺100</Text>
+            <Text style={styles.purchasePrice}>₺200</Text>
           </TouchableOpacity>
         </View>
       </View>

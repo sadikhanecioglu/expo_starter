@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Green Charge",
-    "slug": "green_charge",
+    "name": "ChargeGreen",
+    "slug": "charge_green",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,7 +20,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.ecopool.greencharge",
+      "package": "com.ecopool.chargegreen",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",

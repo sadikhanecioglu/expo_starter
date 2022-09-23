@@ -1,10 +1,258 @@
 import React from 'react';
-import { StyleSheet, Text,  View, Button, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text,  View, ScrollView, Image } from 'react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
 import ItemButton from "../../components/itemButton";
-const ItemPullover = require("../../assets/theme/cg/tshirt.png");
 import BalanceLayout from "../../components/BalanceLayout";
+const ItemPullover = require("../../assets/theme/cg/tshirt.png");
+
+function All({navigation}) {
+    return (
+        <ScrollView contentContainerStyle={styles.itemContainer}>
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                /> 
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />                                                 
+        </ScrollView>
+    );
+}
+
+function Outdoor({navigation}) {
+    return (
+        <ScrollView contentContainerStyle={styles.itemContainer}>
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                /> 
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />                                               
+        </ScrollView>
+    );
+}
+
+function Indoor({navigation}) {
+    return (
+        <ScrollView contentContainerStyle={styles.itemContainer}>
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                /> 
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />                                               
+        </ScrollView>
+    );
+}
+
+function NFT({navigation}) {
+    return (
+        <ScrollView contentContainerStyle={styles.itemContainer}>
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                /> 
+            <ItemButton
+                descText="T-Shirt"
+                descPrice="200"
+                icon={ItemPullover}
+                style={{}}
+                onPress = {() => {
+                    navigation.navigate('Product')
+                }}
+                />                                               
+        </ScrollView>
+    );
+}
+
+const Tab = createMaterialTopTabNavigator();
+  
 export default function StoreScreen({navigation}){
-    
     return (
     <View style={styles.storeContanier}>
         <View style={styles.headerContainer}>
@@ -14,52 +262,55 @@ export default function StoreScreen({navigation}){
             />
         </View>
         <View style={styles.promoContainer}>
-            <Text style={styles.promoText}>Get Promo 40% OFF For Today</Text>
+            <Text style={styles.promoText}>Arkadaşlarını Davet Et OXY Kazan!</Text>
         </View>    
-        <View style={styles.categoriesContainer}>
-            <Text style={[styles.categoryText, styles.categoryFocus]}>All</Text>
-            <Text style={styles.categoryText}>Outdoor</Text>
-            <Text style={styles.categoryText}>Indoor</Text>
-            <Text style={styles.categoryText}>NFT</Text>
-        </View>  
-        <ScrollView contentContainerStyle={styles.itemContainer}>
-            <ItemButton
-                descText="T-Shirt"
-                descPrice="20"
-                icon={ItemPullover}
-                style={{}}
-                onPress = {() => {
-                    navigation.navigate('Product')
+        <Tab.Navigator
+        //initialRouteName="floor"
+            screenOptions={{
+                headerShown: false,
+                tabBarActiveTintColor: '#065649',
+                tabBarInactiveTintColor: "#C4C4C4",
+                tabBarLabelStyle: { fontSize: 14, textTransform: 'none', fontWeight: "400" },
+                tabBarItemStyle: {flexDirection: "row"},
+                tabBarIndicatorStyle: {
+                    backgroundColor: "transparent"
+                },
+                tabBarStyle: {
+                    justifyContent: "center",
+                    height: "12%",
+                    backgroundColor: "whitesmoke",
+                }
+            }}
+        >
+            <Tab.Screen 
+                name="all" 
+                component={All}
+                options={{
+                    tabBarLabel: 'All',
                 }}
-                />
-            <ItemButton
-                descText="T-Shirt"
-                descPrice="20"
-                icon={ItemPullover}
-                style={{}}
-                onPress = {() => {
-                    navigation.navigate('Product')
+            />
+            <Tab.Screen 
+                name="out" 
+                component={Outdoor} 
+                options={{
+                    tabBarLabel: 'Outdoor',
                 }}
-                />
-            <ItemButton
-                descText="T-Shirt"
-                descPrice="20"
-                icon={ItemPullover}
-                style={{}}
-                onPress = {() => {
-                    navigation.navigate('Product')
+            />
+            <Tab.Screen 
+                name="in" 
+                component={Indoor} 
+                options={{
+                    tabBarLabel: 'Indoor',
                 }}
-                />
-            <ItemButton
-                descText="T-Shirt"
-                descPrice="20"
-                icon={ItemPullover}
-                style={{}}
-                onPress = {() => {
-                    navigation.navigate('Product')
+            />
+            <Tab.Screen 
+                name="nft" 
+                component={NFT} 
+                options={{
+                    tabBarLabel: 'NFT',
                 }}
-                />                                                
-        </ScrollView>       
+            />
+        </Tab.Navigator>
     </View>
     );
 }
@@ -69,7 +320,7 @@ const styles = StyleSheet.create({
     storeContanier:{
         flex: 1,
         backgroundColor:'whitesmoke',
-        paddingTop: "12.75%",
+        paddingTop: "7.5%",
         paddingHorizontal: "5%",
     },
     headerContainer: {
@@ -88,34 +339,22 @@ const styles = StyleSheet.create({
     promoContainer:{
         backgroundColor:"#31a05f",
         height: "20%",
-        marginBottom: "8%",
-        borderRadius: 15,
+        borderRadius: 20,
+        justifyContent: "center",
     },
     promoText:{
-        width: "30%",
+        width: "60%",
         fontSize: 20,
         color: "white",
         fontWeight: "bold",
-        margin: "7%",
-    },
-    categoriesContainer:{
-        flexDirection: "row",
-        justifyContent: "space-around",
-        height: "4%",
-        marginBottom: "5%",
-    },
-    categoryText:{
-        color: "grey",
-        fontWeight: "normal",
+        margin: "5%",
+        lineHeight: 30,
     },
     itemContainer:{
         flexGrow: 1,
         flexWrap: "wrap",
         flexDirection: "row",
         justifyContent: "space-between",
+        paddingVertical: "4%",
     },
-    categoryFocus:{
-        color: "#065649",
-        fontWeight: "bold",
-    }
 });
